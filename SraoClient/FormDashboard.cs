@@ -30,7 +30,8 @@ namespace SraoClient
             // Dashboard
             var lavoriSvoltiOggi = DataOrdini.Ordini
                 .SelectMany(x => x.Lavori)
-                .Where(x => x.PezziLavorati != 0 && x.DataInizio.Date == DateTime.Now.Date);
+                .Where(x => x.DataInizio.Date == DateTime.Now.Date);
+                // .Where(x => x.PezziLavorati != 0 && x.DataInizio.Date == DateTime.Now.Date);
 
             lblLavoriOggi.Text = lavoriSvoltiOggi.Count().ToString();
 
@@ -75,10 +76,9 @@ namespace SraoClient
             {
                 labelNomeMacchina.ForeColor = Color.FromArgb(175, 120, 15);
                 message = "Non completato";
-
             }
 
-            if (last.Stato == null)
+            if (last.Stato is null)
             {
                 labelNomeMacchina.Text = message;
             }

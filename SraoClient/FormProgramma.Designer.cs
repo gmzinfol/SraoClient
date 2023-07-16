@@ -42,9 +42,10 @@ namespace SraoClient
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 29);
+            this.label1.Size = new System.Drawing.Size(170, 37);
             this.label1.TabIndex = 10;
             this.label1.Text = "Programma:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -53,9 +54,10 @@ namespace SraoClient
             // 
             this.labelProgramma.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProgramma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelProgramma.Location = new System.Drawing.Point(156, 9);
+            this.labelProgramma.Location = new System.Drawing.Point(194, 11);
+            this.labelProgramma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProgramma.Name = "labelProgramma";
-            this.labelProgramma.Size = new System.Drawing.Size(263, 29);
+            this.labelProgramma.Size = new System.Drawing.Size(425, 36);
             this.labelProgramma.TabIndex = 11;
             this.labelProgramma.Text = "-";
             this.labelProgramma.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -65,9 +67,10 @@ namespace SraoClient
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.label2.Location = new System.Drawing.Point(13, 41);
+            this.label2.Location = new System.Drawing.Point(17, 50);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 23);
+            this.label2.Size = new System.Drawing.Size(154, 29);
             this.label2.TabIndex = 12;
             this.label2.Text = "Tempo medio:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,9 +79,10 @@ namespace SraoClient
             // 
             this.labelTempoMedio.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTempoMedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.labelTempoMedio.Location = new System.Drawing.Point(137, 38);
+            this.labelTempoMedio.Location = new System.Drawing.Point(179, 46);
+            this.labelTempoMedio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTempoMedio.Name = "labelTempoMedio";
-            this.labelTempoMedio.Size = new System.Drawing.Size(317, 29);
+            this.labelTempoMedio.Size = new System.Drawing.Size(440, 36);
             this.labelTempoMedio.TabIndex = 13;
             this.labelTempoMedio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -90,29 +94,31 @@ namespace SraoClient
             this.listBoxLavori.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxLavori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.listBoxLavori.FormattingEnabled = true;
-            this.listBoxLavori.ItemHeight = 16;
-            this.listBoxLavori.Location = new System.Drawing.Point(0, 77);
+            this.listBoxLavori.ItemHeight = 20;
+            this.listBoxLavori.Location = new System.Drawing.Point(0, 99);
+            this.listBoxLavori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxLavori.Name = "listBoxLavori";
-            this.listBoxLavori.Size = new System.Drawing.Size(466, 304);
+            this.listBoxLavori.Size = new System.Drawing.Size(619, 360);
             this.listBoxLavori.Sorted = true;
             this.listBoxLavori.TabIndex = 14;
             this.listBoxLavori.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxLavori_MouseDoubleClick);
             // 
             // FormProgramma
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 381);
+            this.ClientSize = new System.Drawing.Size(619, 459);
             this.Controls.Add(this.listBoxLavori);
             this.Controls.Add(this.labelTempoMedio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelProgramma);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(482, 420);
+            this.MaximumSize = new System.Drawing.Size(637, 506);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(482, 420);
+            this.MinimumSize = new System.Drawing.Size(637, 506);
             this.Name = "FormProgramma";
             this.Text = "Programma";
             this.Load += new System.EventHandler(this.FormProgramma_Load);

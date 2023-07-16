@@ -27,7 +27,7 @@ namespace SraoClient
             listBoxLavori.Sorted = false;
             listBoxLavori.Items.Clear();
             var lavori = Ordine.Lavori
-                .Where(x => x.PezziLavorati != 0)
+                // .Where(x => x.PezziLavorati != 0)
                 .OrderBy(x => x.Macchina)
                 .ThenBy(x => x.DataInizio).ToList();
             listBoxLavori.DataSource = lavori;

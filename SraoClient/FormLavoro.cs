@@ -14,6 +14,7 @@ namespace SraoClient
     public partial class FormLavoro : Form
     {
         public Lavoro Lavoro;
+
         public FormLavoro(Lavoro lavoro)
         {
             InitializeComponent();
@@ -32,7 +33,6 @@ namespace SraoClient
             {
                 labelNomeMacchina.ForeColor = Color.FromArgb(175, 120, 15);
                 message = "Non completato";
-
             }
 
             if (Lavoro.Stato == null)
@@ -44,22 +44,20 @@ namespace SraoClient
                 labelNomeMacchina.Text = Lavoro.Stato;
             }
 
+            labelMacchina.Text = Lavoro.Macchina.ToString();
             labelProgramma.Text = Lavoro.Programma;
-            labelOrdine.Text = String.Format(
-                "Numero ordine: {0}",
-                Lavoro.OrdineCommento);
+            labelOrdine.Text = Lavoro.OrdineCommento;
             labelLavoro.Text = String.Format(
                 "{0} di {1}",
                 Lavoro.PezziLavorati.ToString(),
                 (Lavoro.PezziLavorati + Lavoro.PezziRimanenti).ToString());
-            if (Lavoro.DataInizio != new DateTime() &&
-                Lavoro.DataFine != new DateTime())
+
+            DateTime temp = new DateTime();
+            if (Lavoro.DataInizio != temp && Lavoro.DataFine != temp)
             {
                 labelDataInizio.Text = Lavoro.DataInizio.ToString();
                 labelDataFine.Text = Lavoro.DataFine.ToString();
-                labelTempoImpiegato.Text = String.Format(
-                    "Tempo Impiegato: {0}",
-                    (Lavoro.DataFine - Lavoro.DataInizio).ToString());
+                labelTempoImpiegato.Text = (Lavoro.DataFine - Lavoro.DataInizio).ToString();
                 labelAggiornamento.Text = String.Format(
                     "Ultimo aggiornamento avvenuto il: {0}",
                     Lavoro.DataFine);

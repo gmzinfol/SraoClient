@@ -41,7 +41,7 @@ namespace SraoClient
             {
                 double tempoMedioTicks = tempi.Average(x => x.TotalMinutes);
                 if (tempoMedioTicks > 0)
-                    labelTempoMedio.Text = TimeSpan.FromMinutes(tempoMedioTicks).ToString();
+                    labelTempoMedio.Text = TimeSpan.FromMinutes(tempoMedioTicks).ToString("hh\\:mm\\:ss");
             }
         }
 
