@@ -13,21 +13,25 @@ namespace SraoClient
 {
     public partial class FormOrdini : Form
     {
-        Data DataOrdini;
-        public FormOrdini(Data dataOrdini)
+        Data Data;
+
+        public FormOrdini(Data data)
         {
             InitializeComponent();
-            DataOrdini = dataOrdini;
+            Data = data;
         }
 
         private void FormOrdini_Load(object sender, EventArgs e)
         {
-            DataOrdini.Update();
-
-            if (!DataOrdini.Ordini.Any())
+            if (Data is null)
                 return;
 
-            var ordini = DataOrdini.Ordini.OrderByDescending(x => x.Lavori.FirstOrDefault().DataInizio).ToList();
+            Data.Update();
+
+            if (!Data.Ordini.Any())
+                return;
+
+            var ordini = Data.Ordini.OrderByDescending(x => x.Lavori.FirstOrDefault().DataInizio).ToList();
             listBoxOrdini.Sorted = false;
             listBoxOrdini.Items.Clear();
             listBoxOrdini.DataSource = ordini;
@@ -48,7 +52,7 @@ namespace SraoClient
             if (dt1 > dt2)
                 return;
 
-            var ordini = DataOrdini.Ordini;
+            var ordini = Data.Ordini;
 
             if (txtCerca.Text != String.Empty)
                 ordini = ordini.Where(x => x.Commento.Contains(txtCerca.Text)).ToList();

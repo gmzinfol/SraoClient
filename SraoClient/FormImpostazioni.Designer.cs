@@ -42,26 +42,29 @@ namespace SraoClient
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Location = new System.Drawing.Point(17, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 15);
+            this.label1.Size = new System.Drawing.Size(71, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "IP Server";
             // 
             // txtScambio
             // 
             this.txtScambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtScambio.Location = new System.Drawing.Point(16, 32);
+            this.txtScambio.Location = new System.Drawing.Point(21, 39);
+            this.txtScambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtScambio.Name = "txtScambio";
-            this.txtScambio.Size = new System.Drawing.Size(344, 26);
+            this.txtScambio.Size = new System.Drawing.Size(457, 30);
             this.txtScambio.TabIndex = 1;
             // 
             // txtData
             // 
             this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtData.Location = new System.Drawing.Point(16, 90);
+            this.txtData.Location = new System.Drawing.Point(21, 111);
+            this.txtData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(344, 26);
+            this.txtData.Size = new System.Drawing.Size(457, 30);
             this.txtData.TabIndex = 2;
             // 
             // label2
@@ -69,9 +72,10 @@ namespace SraoClient
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label2.Location = new System.Drawing.Point(12, 71);
+            this.label2.Location = new System.Drawing.Point(16, 87);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 15);
+            this.label2.Size = new System.Drawing.Size(101, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Percorso dati";
             // 
@@ -82,9 +86,10 @@ namespace SraoClient
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(16, 136);
+            this.btnSave.Location = new System.Drawing.Point(21, 167);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 26);
+            this.btnSave.Size = new System.Drawing.Size(143, 32);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Salva";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -97,19 +102,20 @@ namespace SraoClient
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(129, 136);
+            this.btnClose.Location = new System.Drawing.Point(172, 167);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(107, 26);
+            this.btnClose.Size = new System.Drawing.Size(143, 32);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Chiudi";
             this.btnClose.UseVisualStyleBackColor = false;
             // 
             // FormImpostazioni
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label2);
@@ -117,8 +123,10 @@ namespace SraoClient
             this.Controls.Add(this.txtScambio);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormImpostazioni";
             this.Text = "FormImpostazioni";
+            this.Load += new System.EventHandler(this.FormImpostazioni_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

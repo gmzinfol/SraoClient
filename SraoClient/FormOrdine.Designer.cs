@@ -47,7 +47,7 @@ namespace SraoClient
             this.listBoxLavori.FormattingEnabled = true;
             this.listBoxLavori.ItemHeight = 20;
             this.listBoxLavori.Location = new System.Drawing.Point(0, 114);
-            this.listBoxLavori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxLavori.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxLavori.Name = "listBoxLavori";
             this.listBoxLavori.Size = new System.Drawing.Size(613, 340);
             this.listBoxLavori.Sorted = true;
@@ -117,7 +117,7 @@ namespace SraoClient
             this.Controls.Add(this.listBoxLavori);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(635, 505);
             this.MinimizeBox = false;

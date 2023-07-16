@@ -14,22 +14,26 @@ namespace SraoClient
     public partial class FormProgramma : Form
     {
         string Programma;
-        Data DataOrdini;
-        public FormProgramma(string programma, Data dataOrdini)
+        Data Data;
+
+        public FormProgramma(string programma, Data data)
         {
             InitializeComponent();
             Programma = programma;
-            DataOrdini = dataOrdini;
+            Data = data;
         }
 
         private void FormProgramma_Load(object sender, EventArgs e)
         {
-            labelProgramma.Text = Programma;
-
-            if (!DataOrdini.Ordini.Any())
+            if (Data is null)
                 return;
 
-            var lavori = DataOrdini.Ordini.SelectMany(x => x.Lavori)
+            labelProgramma.Text = Programma;
+
+            if (!Data.Ordini.Any())
+                return;
+
+            var lavori = Data.Ordini.SelectMany(x => x.Lavori)
                 .Where(x => x.StatoOk && x.Programma == Programma)
                 .OrderBy(x => x.OrdineCommento)
                 .ToList();

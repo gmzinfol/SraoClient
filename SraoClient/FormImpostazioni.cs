@@ -14,30 +14,41 @@ namespace SraoClient
     public partial class FormImpostazioni : Form
     {
         Preferences Preferences;
-        Data DataOrdini;
-        public FormImpostazioni(Preferences prefs, Data dataOrdini)
+        Data Data;
+
+        public FormImpostazioni(Preferences prefs, Data data)
         {
             InitializeComponent();
+
             Preferences = prefs;
-            Preferences.Load();
-
-            DataOrdini = dataOrdini;
-
-            if (Preferences.Server != null)
-                txtScambio.Text = Preferences.Server;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            Preferences.Server = txtScambio.Text;
-            Preferences.Save();
-
-            DataOrdini.ChangeHost(Preferences.Server);
+            Data = data;
         }
 
         private void FormImpostazioni_Load(object sender, EventArgs e)
         {
+            if (Preferences is null)
+                return;
 
+            Preferences.Load();
+
+            if (Preferences.Server is null)
+                return;
+
+            txtScambio.Text = Preferences.Server;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (Preferences is null || Preferences.Server is null)
+                return;
+
+            Preferences.Server = txtScambio.Text;
+            Preferences.Save();
+
+            if (Data is null)
+                return;
+
+            Data.ChangeHost(Preferences.Server);
         }
     }
 }

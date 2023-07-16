@@ -153,7 +153,7 @@ namespace SraoClient
             this.panel1.Controls.Add(this.labelLavoro);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1051, 554);
             this.panel1.TabIndex = 6;
@@ -389,9 +389,9 @@ namespace SraoClient
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDashboard";
-            this.Text = " ";
+            this.Text = "FormDashboard";
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

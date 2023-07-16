@@ -14,6 +14,7 @@ namespace SraoClient
     public partial class FormOrdine : Form
     {
         public Ordine Ordine;
+
         public FormOrdine(Ordine ordine)
         {
             InitializeComponent();
@@ -22,6 +23,9 @@ namespace SraoClient
 
         private void FormOrdine_Load(object sender, EventArgs e)
         {
+            if (Ordine is null)
+                return;
+
             labelLavori.Text = Ordine.Commento;
 
             listBoxLavori.Sorted = false;

@@ -13,21 +13,25 @@ namespace SraoClient
 {
     public partial class FormProgrammi : Form
     {
-        Data DataOrdini;
-        public FormProgrammi(Data dataOrdini)
+        Data Data;
+
+        public FormProgrammi(Data data)
         {
             InitializeComponent();
-            DataOrdini = dataOrdini;
+            Data = data;
         }
 
         private void FormProgrammi_Load(object sender, EventArgs e)
         {
-            DataOrdini.Update();
-
-            if (!DataOrdini.Ordini.Any())
+            if (Data is null)
                 return;
 
-            var programmi = DataOrdini.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
+            Data.Update();
+
+            if (!Data.Ordini.Any())
+                return;
+
+            var programmi = Data.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
             listBoxProgrammi.Sorted = false;
             listBoxProgrammi.Items.Clear();
             listBoxProgrammi.DataSource = programmi;
@@ -35,13 +39,13 @@ namespace SraoClient
 
         private void btnCerca_Click(object sender, EventArgs e)
         {
-            var programmi = DataOrdini.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
+            var programmi = Data.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
             listBoxProgrammi.DataSource = programmi.Where(x => x.Contains(txtCerca.Text)).ToList();
         }
 
         private void listBoxProgrammi_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            FormProgramma dialog = new FormProgramma(listBoxProgrammi.SelectedItem.ToString(), DataOrdini);
+            FormProgramma dialog = new FormProgramma(listBoxProgrammi.SelectedItem.ToString(), Data);
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.Show();
         }

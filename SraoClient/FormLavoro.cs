@@ -23,6 +23,9 @@ namespace SraoClient
 
         private void FormLavoro_Load(object sender, EventArgs e)
         {
+            if (Lavoro is null)
+                return;
+
             string message;
             if (Lavoro.StatoOk)
             {

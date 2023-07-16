@@ -11,11 +11,12 @@ namespace SraoClient
     public class Data
     {
         private Srao _srao;
-        public List<Ordine> Ordini = new List<Ordine>();
+        public List<Ordine> Ordini;
 
         public Data(string host)
         {
             _srao = new Srao(host);
+            Ordini = new List<Ordine>();
         }
 
         public void ChangeHost(string host)
