@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  main:
+    permissions: write-all
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: "7.0.x"
+    - name: Build
+      run: |
+        dotnet restore
+        dotnet build -c Release --no-restore
+        dotnet publish --no-build --output publish -c Release .\SraoClient\SraoClient.csproj
+        Compress-Archive .\publish\* .\publish.zip
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.run_number }}
+        release_name: v${{ github.run_number }}
+        draft: false
+        prerelease: false
+    - name: Upload release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: .\publish.zip
+        asset_name: publish.zip
+        asset_content_type: application/zip
+
