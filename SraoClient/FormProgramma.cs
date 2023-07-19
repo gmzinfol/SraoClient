@@ -40,13 +40,7 @@ namespace SraoClient
 
             listBoxLavori.DataSource = lavori;
 
-            var tempi = lavori.Select(x => x.DataFine - x.DataInizio);
-            if (tempi.Any())
-            {
-                double tempoMedioTicks = tempi.Average(x => x.TotalMinutes);
-                if (tempoMedioTicks > 0)
-                    labelTempoMedio.Text = TimeSpan.FromMinutes(tempoMedioTicks).ToString("hh\\:mm\\:ss");
-            }
+            labelTempoMedio.Text = Utils.Average(lavori);
         }
 
         private void listBoxLavori_MouseDoubleClick(object sender, MouseEventArgs e)

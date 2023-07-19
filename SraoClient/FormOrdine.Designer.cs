@@ -62,9 +62,8 @@ namespace SraoClient
             this.labelLavori.Location = new System.Drawing.Point(232, 11);
             this.labelLavori.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLavori.Name = "labelLavori";
-            this.labelLavori.Size = new System.Drawing.Size(381, 36);
+            this.labelLavori.Size = new System.Drawing.Size(368, 36);
             this.labelLavori.TabIndex = 7;
-            this.labelLavori.Text = "-";
             this.labelLavori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelTempoMedio
@@ -74,7 +73,7 @@ namespace SraoClient
             this.labelTempoMedio.Location = new System.Drawing.Point(173, 54);
             this.labelTempoMedio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTempoMedio.Name = "labelTempoMedio";
-            this.labelTempoMedio.Size = new System.Drawing.Size(443, 36);
+            this.labelTempoMedio.Size = new System.Drawing.Size(427, 36);
             this.labelTempoMedio.TabIndex = 8;
             this.labelTempoMedio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

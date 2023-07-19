@@ -31,18 +31,11 @@ namespace SraoClient
             listBoxLavori.Sorted = false;
             listBoxLavori.Items.Clear();
             var lavori = Ordine.Lavori
-                // .Where(x => x.PezziLavorati != 0)
                 .OrderBy(x => x.Macchina)
                 .ThenBy(x => x.DataInizio).ToList();
             listBoxLavori.DataSource = lavori;
 
-            var tempi = lavori.Where(x => x.StatoOk).Select(x => x.DataFine - x.DataInizio);
-            if (tempi.Any())
-            {
-                double tempoMedioTicks = tempi.Average(x => x.TotalMinutes);
-                if (tempoMedioTicks > 0)
-                    labelTempoMedio.Text = TimeSpan.FromMinutes(tempoMedioTicks).ToString("hh\\:mm\\:ss");
-            }
+            labelTempoMedio.Text = Utils.Average(lavori);
         }
 
         private void listBoxLavori_MouseDoubleClick(object sender, MouseEventArgs e)

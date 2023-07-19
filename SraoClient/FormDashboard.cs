@@ -35,17 +35,10 @@ namespace SraoClient
             var lavoriSvoltiOggi = Data.Ordini
                 .SelectMany(x => x.Lavori)
                 .Where(x => x.DataInizio.Date == DateTime.Now.Date);
-                // .Where(x => x.PezziLavorati != 0 && x.DataInizio.Date == DateTime.Now.Date);
 
             lblLavoriOggi.Text = lavoriSvoltiOggi.Count().ToString();
 
-            var tempi = lavoriSvoltiOggi.Select(x => x.DataFine - x.DataInizio);
-            if (tempi.Any())
-            {
-                double tempoMedioTicks = tempi.Average(x => x.TotalMinutes);
-                if (tempoMedioTicks > 0)
-                    lblTempoMedioOggi.Text = TimeSpan.FromMinutes(tempoMedioTicks).ToString();
-            }
+            lblTempoMedioOggi.Text = Utils.Average(lavoriSvoltiOggi);
 
             var ordiniSvolti = lavoriSvoltiOggi.Select(x => x.OrdineCommento).Distinct();
             foreach (string ordine in ordiniSvolti)

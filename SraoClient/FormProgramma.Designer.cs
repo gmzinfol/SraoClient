@@ -57,9 +57,8 @@ namespace SraoClient
             this.labelProgramma.Location = new System.Drawing.Point(194, 11);
             this.labelProgramma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProgramma.Name = "labelProgramma";
-            this.labelProgramma.Size = new System.Drawing.Size(425, 36);
+            this.labelProgramma.Size = new System.Drawing.Size(412, 36);
             this.labelProgramma.TabIndex = 11;
-            this.labelProgramma.Text = "-";
             this.labelProgramma.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -82,7 +81,7 @@ namespace SraoClient
             this.labelTempoMedio.Location = new System.Drawing.Point(179, 46);
             this.labelTempoMedio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTempoMedio.Name = "labelTempoMedio";
-            this.labelTempoMedio.Size = new System.Drawing.Size(440, 36);
+            this.labelTempoMedio.Size = new System.Drawing.Size(427, 36);
             this.labelTempoMedio.TabIndex = 13;
             this.labelTempoMedio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

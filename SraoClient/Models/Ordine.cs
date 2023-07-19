@@ -15,7 +15,7 @@ namespace SraoClient.Models
         public override string ToString()
         {
             return Commento
-                + " (Ultimo lavoro: " + Lavori.OrderBy(x => x.DataFine).Last().DataInizio
+                + " (Ultimo lavoro: " + Lavori.Last().DataInizio
                 + ") (" + Lavori.Count + " elementi)";
         }
     }
