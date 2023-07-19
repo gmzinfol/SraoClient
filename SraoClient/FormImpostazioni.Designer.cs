@@ -53,7 +53,7 @@ namespace SraoClient
             // 
             this.txtScambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScambio.Location = new System.Drawing.Point(21, 39);
-            this.txtScambio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtScambio.Margin = new System.Windows.Forms.Padding(4);
             this.txtScambio.Name = "txtScambio";
             this.txtScambio.Size = new System.Drawing.Size(457, 30);
             this.txtScambio.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace SraoClient
             // 
             this.txtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtData.Location = new System.Drawing.Point(21, 111);
-            this.txtData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtData.Margin = new System.Windows.Forms.Padding(4);
             this.txtData.Name = "txtData";
             this.txtData.Size = new System.Drawing.Size(457, 30);
             this.txtData.TabIndex = 2;
@@ -87,7 +87,7 @@ namespace SraoClient
             this.btnSave.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(21, 167);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(143, 32);
             this.btnSave.TabIndex = 4;
@@ -103,7 +103,7 @@ namespace SraoClient
             this.btnClose.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(172, 167);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(143, 32);
             this.btnClose.TabIndex = 5;
@@ -115,7 +115,7 @@ namespace SraoClient
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1090, 690);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label2);
@@ -123,7 +123,7 @@ namespace SraoClient
             this.Controls.Add(this.txtScambio);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormImpostazioni";
             this.Text = "FormImpostazioni";
             this.Load += new System.EventHandler(this.FormImpostazioni_Load);

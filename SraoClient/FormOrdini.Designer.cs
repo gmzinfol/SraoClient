@@ -50,10 +50,11 @@ namespace SraoClient
             this.listBoxOrdini.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxOrdini.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxOrdini.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.listBoxOrdini.ItemHeight = 16;
+            this.listBoxOrdini.ItemHeight = 20;
             this.listBoxOrdini.Location = new System.Drawing.Point(0, 0);
+            this.listBoxOrdini.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxOrdini.Name = "listBoxOrdini";
-            this.listBoxOrdini.Size = new System.Drawing.Size(800, 329);
+            this.listBoxOrdini.Size = new System.Drawing.Size(1090, 542);
             this.listBoxOrdini.Sorted = true;
             this.listBoxOrdini.TabIndex = 0;
             this.listBoxOrdini.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxOrdini_MouseDoubleClick);
@@ -63,9 +64,10 @@ namespace SraoClient
             this.txtCerca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCerca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCerca.Location = new System.Drawing.Point(12, 40);
+            this.txtCerca.Location = new System.Drawing.Point(16, 49);
+            this.txtCerca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCerca.Name = "txtCerca";
-            this.txtCerca.Size = new System.Drawing.Size(663, 26);
+            this.txtCerca.Size = new System.Drawing.Size(906, 30);
             this.txtCerca.TabIndex = 2;
             this.txtCerca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCerca_KeyDown);
             // 
@@ -77,9 +79,10 @@ namespace SraoClient
             this.btnCerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerca.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerca.ForeColor = System.Drawing.Color.White;
-            this.btnCerca.Location = new System.Drawing.Point(681, 40);
+            this.btnCerca.Location = new System.Drawing.Point(931, 49);
+            this.btnCerca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerca.Name = "btnCerca";
-            this.btnCerca.Size = new System.Drawing.Size(107, 26);
+            this.btnCerca.Size = new System.Drawing.Size(143, 32);
             this.btnCerca.TabIndex = 5;
             this.btnCerca.Text = "Cerca";
             this.btnCerca.UseVisualStyleBackColor = false;
@@ -89,9 +92,10 @@ namespace SraoClient
             // 
             this.labelOrdini.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrdini.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelOrdini.Location = new System.Drawing.Point(12, 9);
+            this.labelOrdini.Location = new System.Drawing.Point(16, 11);
+            this.labelOrdini.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelOrdini.Name = "labelOrdini";
-            this.labelOrdini.Size = new System.Drawing.Size(442, 29);
+            this.labelOrdini.Size = new System.Drawing.Size(589, 36);
             this.labelOrdini.TabIndex = 6;
             this.labelOrdini.Text = "Ordini";
             this.labelOrdini.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -108,16 +112,18 @@ namespace SraoClient
             this.panel1.Controls.Add(this.txtCerca);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 121);
+            this.panel1.Size = new System.Drawing.Size(1090, 148);
             this.panel1.TabIndex = 7;
             // 
             // checkBoxEnd
             // 
             this.checkBoxEnd.AutoSize = true;
-            this.checkBoxEnd.Location = new System.Drawing.Point(206, 101);
+            this.checkBoxEnd.Location = new System.Drawing.Point(275, 124);
+            this.checkBoxEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxEnd.Name = "checkBoxEnd";
-            this.checkBoxEnd.Size = new System.Drawing.Size(46, 17);
+            this.checkBoxEnd.Size = new System.Drawing.Size(55, 20);
             this.checkBoxEnd.TabIndex = 10;
             this.checkBoxEnd.Text = "Fine";
             this.checkBoxEnd.UseVisualStyleBackColor = true;
@@ -126,9 +132,10 @@ namespace SraoClient
             // checkBoxStart
             // 
             this.checkBoxStart.AutoSize = true;
-            this.checkBoxStart.Location = new System.Drawing.Point(206, 75);
+            this.checkBoxStart.Location = new System.Drawing.Point(275, 92);
+            this.checkBoxStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBoxStart.Name = "checkBoxStart";
-            this.checkBoxStart.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxStart.Size = new System.Drawing.Size(59, 20);
             this.checkBoxStart.TabIndex = 9;
             this.checkBoxStart.Text = "Inizio";
             this.checkBoxStart.UseVisualStyleBackColor = true;
@@ -137,37 +144,41 @@ namespace SraoClient
             // dateTimeEnd
             // 
             this.dateTimeEnd.Enabled = false;
-            this.dateTimeEnd.Location = new System.Drawing.Point(12, 98);
+            this.dateTimeEnd.Location = new System.Drawing.Point(16, 121);
+            this.dateTimeEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimeEnd.Name = "dateTimeEnd";
-            this.dateTimeEnd.Size = new System.Drawing.Size(188, 20);
+            this.dateTimeEnd.Size = new System.Drawing.Size(249, 22);
             this.dateTimeEnd.TabIndex = 8;
             // 
             // dateTimeStart
             // 
             this.dateTimeStart.Enabled = false;
-            this.dateTimeStart.Location = new System.Drawing.Point(12, 72);
+            this.dateTimeStart.Location = new System.Drawing.Point(16, 89);
+            this.dateTimeStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimeStart.Name = "dateTimeStart";
-            this.dateTimeStart.Size = new System.Drawing.Size(188, 20);
+            this.dateTimeStart.Size = new System.Drawing.Size(249, 22);
             this.dateTimeStart.TabIndex = 7;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.listBoxOrdini);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 121);
+            this.panel2.Location = new System.Drawing.Point(0, 148);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 329);
+            this.panel2.Size = new System.Drawing.Size(1090, 542);
             this.panel2.TabIndex = 8;
             // 
             // FormOrdini
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1090, 690);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormOrdini";
             this.Text = "FormOrdini";
             this.Load += new System.EventHandler(this.FormOrdini_Load);

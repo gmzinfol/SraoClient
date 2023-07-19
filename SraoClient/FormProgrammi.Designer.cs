@@ -45,17 +45,19 @@ namespace SraoClient
             this.panel1.Controls.Add(this.txtCerca);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 69);
+            this.panel1.Size = new System.Drawing.Size(1090, 85);
             this.panel1.TabIndex = 8;
             // 
             // labelProgrammi
             // 
             this.labelProgrammi.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProgrammi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelProgrammi.Location = new System.Drawing.Point(12, 9);
+            this.labelProgrammi.Location = new System.Drawing.Point(16, 11);
+            this.labelProgrammi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProgrammi.Name = "labelProgrammi";
-            this.labelProgrammi.Size = new System.Drawing.Size(442, 29);
+            this.labelProgrammi.Size = new System.Drawing.Size(589, 36);
             this.labelProgrammi.TabIndex = 6;
             this.labelProgrammi.Text = "Programmi";
             this.labelProgrammi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -68,9 +70,10 @@ namespace SraoClient
             this.btnCerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerca.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerca.ForeColor = System.Drawing.Color.White;
-            this.btnCerca.Location = new System.Drawing.Point(681, 40);
+            this.btnCerca.Location = new System.Drawing.Point(931, 49);
+            this.btnCerca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerca.Name = "btnCerca";
-            this.btnCerca.Size = new System.Drawing.Size(107, 26);
+            this.btnCerca.Size = new System.Drawing.Size(143, 32);
             this.btnCerca.TabIndex = 5;
             this.btnCerca.Text = "Cerca";
             this.btnCerca.UseVisualStyleBackColor = false;
@@ -81,9 +84,10 @@ namespace SraoClient
             this.txtCerca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCerca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCerca.Location = new System.Drawing.Point(12, 40);
+            this.txtCerca.Location = new System.Drawing.Point(16, 49);
+            this.txtCerca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCerca.Name = "txtCerca";
-            this.txtCerca.Size = new System.Drawing.Size(663, 26);
+            this.txtCerca.Size = new System.Drawing.Size(906, 30);
             this.txtCerca.TabIndex = 2;
             this.txtCerca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCerca_KeyDown);
             // 
@@ -94,23 +98,25 @@ namespace SraoClient
             this.listBoxProgrammi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxProgrammi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxProgrammi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.listBoxProgrammi.ItemHeight = 16;
-            this.listBoxProgrammi.Location = new System.Drawing.Point(0, 69);
+            this.listBoxProgrammi.ItemHeight = 20;
+            this.listBoxProgrammi.Location = new System.Drawing.Point(0, 85);
+            this.listBoxProgrammi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxProgrammi.Name = "listBoxProgrammi";
-            this.listBoxProgrammi.Size = new System.Drawing.Size(800, 381);
+            this.listBoxProgrammi.Size = new System.Drawing.Size(1090, 605);
             this.listBoxProgrammi.Sorted = true;
             this.listBoxProgrammi.TabIndex = 9;
             this.listBoxProgrammi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxProgrammi_MouseDoubleClick);
             // 
             // FormProgrammi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1090, 690);
             this.Controls.Add(this.listBoxProgrammi);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormProgrammi";
             this.Text = "FormProgrammi";
             this.Load += new System.EventHandler(this.FormProgrammi_Load);

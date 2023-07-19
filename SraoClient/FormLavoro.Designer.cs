@@ -64,8 +64,8 @@ namespace SraoClient
             // labelMacchina
             // 
             this.labelMacchina.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMacchina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.labelMacchina.Location = new System.Drawing.Point(201, 116);
+            this.labelMacchina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelMacchina.Location = new System.Drawing.Point(201, 115);
             this.labelMacchina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMacchina.Name = "labelMacchina";
             this.labelMacchina.Size = new System.Drawing.Size(399, 37);
@@ -76,8 +76,8 @@ namespace SraoClient
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.label12.Location = new System.Drawing.Point(13, 118);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.label12.Location = new System.Drawing.Point(13, 117);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(171, 36);
@@ -88,8 +88,8 @@ namespace SraoClient
             // labelDataFine
             // 
             this.labelDataFine.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataFine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.labelDataFine.Location = new System.Drawing.Point(186, 255);
+            this.labelDataFine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelDataFine.Location = new System.Drawing.Point(186, 259);
             this.labelDataFine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataFine.Name = "labelDataFine";
             this.labelDataFine.Size = new System.Drawing.Size(414, 37);
@@ -99,8 +99,8 @@ namespace SraoClient
             // labelDataInizio
             // 
             this.labelDataInizio.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDataInizio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.labelDataInizio.Location = new System.Drawing.Point(204, 221);
+            this.labelDataInizio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelDataInizio.Location = new System.Drawing.Point(204, 224);
             this.labelDataInizio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDataInizio.Name = "labelDataInizio";
             this.labelDataInizio.Size = new System.Drawing.Size(396, 37);
@@ -111,8 +111,8 @@ namespace SraoClient
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.label7.Location = new System.Drawing.Point(13, 257);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.label7.Location = new System.Drawing.Point(13, 261);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(159, 36);
@@ -124,8 +124,8 @@ namespace SraoClient
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.label6.Location = new System.Drawing.Point(13, 222);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.label6.Location = new System.Drawing.Point(13, 225);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(177, 36);
@@ -137,8 +137,8 @@ namespace SraoClient
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.label5.Location = new System.Drawing.Point(13, 188);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.label5.Location = new System.Drawing.Point(13, 189);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(226, 36);
@@ -150,8 +150,8 @@ namespace SraoClient
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.label4.Location = new System.Drawing.Point(13, 152);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.label4.Location = new System.Drawing.Point(13, 153);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 36);
@@ -164,7 +164,7 @@ namespace SraoClient
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label3.Location = new System.Drawing.Point(13, 49);
+            this.label3.Location = new System.Drawing.Point(13, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 36);
@@ -191,7 +191,7 @@ namespace SraoClient
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.label1.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label1.Location = new System.Drawing.Point(13, 83);
+            this.label1.Location = new System.Drawing.Point(13, 81);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(226, 36);
@@ -203,7 +203,7 @@ namespace SraoClient
             // 
             this.labelNomeMacchina.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNomeMacchina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelNomeMacchina.Location = new System.Drawing.Point(260, 82);
+            this.labelNomeMacchina.Location = new System.Drawing.Point(260, 80);
             this.labelNomeMacchina.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNomeMacchina.Name = "labelNomeMacchina";
             this.labelNomeMacchina.Size = new System.Drawing.Size(340, 37);
@@ -213,8 +213,8 @@ namespace SraoClient
             // labelProgramma
             // 
             this.labelProgramma.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProgramma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.labelProgramma.Location = new System.Drawing.Point(190, 151);
+            this.labelProgramma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelProgramma.Location = new System.Drawing.Point(190, 152);
             this.labelProgramma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProgramma.Name = "labelProgramma";
             this.labelProgramma.Size = new System.Drawing.Size(410, 37);
@@ -224,8 +224,8 @@ namespace SraoClient
             // labelTempoImpiegato
             // 
             this.labelTempoImpiegato.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTempoImpiegato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(165)))), ((int)(((byte)(165)))));
-            this.labelTempoImpiegato.Location = new System.Drawing.Point(258, 186);
+            this.labelTempoImpiegato.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelTempoImpiegato.Location = new System.Drawing.Point(258, 187);
             this.labelTempoImpiegato.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTempoImpiegato.Name = "labelTempoImpiegato";
             this.labelTempoImpiegato.Size = new System.Drawing.Size(342, 37);
@@ -247,7 +247,7 @@ namespace SraoClient
             // 
             this.labelLavoro.Font = new System.Drawing.Font("Calibri", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLavoro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelLavoro.Location = new System.Drawing.Point(129, 47);
+            this.labelLavoro.Location = new System.Drawing.Point(129, 43);
             this.labelLavoro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLavoro.Name = "labelLavoro";
             this.labelLavoro.Size = new System.Drawing.Size(471, 37);
@@ -279,7 +279,7 @@ namespace SraoClient
             this.Controls.Add(this.labelAggiornamento);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(635, 505);
             this.MinimizeBox = false;
