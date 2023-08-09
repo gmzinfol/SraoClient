@@ -11,6 +11,7 @@ namespace SraoClient
     {
         public string CachePath;
         public string Server { get; set; }
+
         public Preferences()
         {
             try

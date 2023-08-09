@@ -39,7 +39,7 @@ namespace SraoClient
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Preferences is null || Preferences.Server is null)
+            if (Preferences is null)
                 return;
 
             Preferences.Server = txtScambio.Text;
