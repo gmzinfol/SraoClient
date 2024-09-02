@@ -33,7 +33,7 @@ namespace SraoClient
 
             var ordini = Data.Ordini
                 .Where(x => x.Lavori.Count() > 0)
-                .OrderByDescending(x => x.Lavori.FirstOrDefault().DataInizio).ToList();
+                .OrderByDescending(x => x.Lavori.LastOrDefault().DataInizio).ToList();
 
             listBoxOrdini.Sorted = false;
             listBoxOrdini.Items.Clear();
