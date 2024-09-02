@@ -32,7 +32,8 @@ namespace SraoClient
             listBoxLavori.Items.Clear();
             var lavori = Ordine.Lavori
                 .OrderBy(x => x.Macchina)
-                .ThenBy(x => x.DataInizio).ToList();
+                .ThenBy(x => x.DataInizio)
+                .ToList();
             listBoxLavori.DataSource = lavori;
 
             labelTempoMedio.Text = Utils.Average(lavori);

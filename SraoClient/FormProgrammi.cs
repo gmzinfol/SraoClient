@@ -31,7 +31,11 @@ namespace SraoClient
             if (!Data.Ordini.Any())
                 return;
 
-            var programmi = Data.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
+            var programmi = Data.Ordini
+                .SelectMany(x => x.Lavori)
+                .Select(x => x.Programma)
+                .Distinct()
+                .ToList();
             listBoxProgrammi.Sorted = false;
             listBoxProgrammi.Items.Clear();
             listBoxProgrammi.DataSource = programmi;

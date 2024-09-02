@@ -31,7 +31,10 @@ namespace SraoClient
             if (!Data.Ordini.Any())
                 return;
 
-            var ordini = Data.Ordini.OrderByDescending(x => x.Lavori.FirstOrDefault().DataInizio).ToList();
+            var ordini = Data.Ordini
+                .Where(x => x.Lavori.Count() > 0)
+                .OrderByDescending(x => x.Lavori.FirstOrDefault().DataInizio).ToList();
+
             listBoxOrdini.Sorted = false;
             listBoxOrdini.Items.Clear();
             listBoxOrdini.DataSource = ordini;
@@ -52,7 +55,7 @@ namespace SraoClient
             if (dt1 > dt2)
                 return;
 
-            var ordini = Data.Ordini;
+            var ordini = Data.Ordini.Where(x => x.Lavori.Count() > 0);
 
             if (txtCerca.Text != String.Empty)
                 ordini = ordini.Where(x => x.Commento.Contains(txtCerca.Text)).ToList();

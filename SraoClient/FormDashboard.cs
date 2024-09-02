@@ -27,6 +27,10 @@ namespace SraoClient
                 return;
 
             Data.Update();
+
+            if (Data.Ordini is null)
+                return;
+
             labelAggiornamento.Text = String.Format(
                 "Ultimo aggiornamento avvenuto il: {0}",
                 DateTime.Now);

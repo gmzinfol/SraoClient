@@ -29,8 +29,8 @@ namespace SraoClient
         {
             try
             {
-                // Ordini = await _srao.GetOrdiniAsync();
-                Ordini = await _srao.GetOrdiniAnnoAsync();
+                Ordini = await _srao.GetOrdiniAsync();
+                // Ordini = await _srao.GetOrdiniAnnoAsync();
             }
             catch (Exception ex)
             {
