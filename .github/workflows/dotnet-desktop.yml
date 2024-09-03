@@ -48,8 +48,7 @@ jobs:
   main:
     permissions: write-all
     runs-on: windows-latest
-    env:
-      Solution_Name: SraoClient.sln
+
     steps:
     - uses: actions/checkout@v2
 
@@ -59,11 +58,13 @@ jobs:
 
     - name: Build
       run: |
-        msbuild $env:Wap_Project_Path /p:Configuration=$env:Configuration /p:Platform=$env:Platform
-        Compress-Archive .\publish\* .\publish.zip
+        msbuild $env:Solution /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:PublishDir=$env:PublishDir /p:OutDir=$env:PublishDir
+        Compress-Archive $env:PublishDir .\publish.zip
       env:
+        Solution: SraoClient.sln
         Configuration: Release
-        Platform: x64
+        Platform: "Any CPU"
+        PublishDir: ".\publish"
 
     - name: Create release
       id: create_release
