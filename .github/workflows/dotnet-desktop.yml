@@ -59,7 +59,7 @@ jobs:
     - name: Build
       run: |
         msbuild $env:Solution /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:PublishDir=$env:PublishDir /p:OutDir=$env:PublishDir
-        Compress-Archive $env:PublishDir .\publish.zip
+        Compress-Archive .\SraoClient\publish\* .\publish.zip
       env:
         Solution: SraoClient.sln
         Configuration: Release
