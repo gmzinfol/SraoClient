@@ -58,13 +58,12 @@ jobs:
 
     - name: Build
       run: |
-        msbuild $env:Solution /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:PublishDir=$env:PublishDir /p:OutDir=$env:PublishDir
+        msbuild $env:Solution /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:PublishDir=.\publish /p:OutDir=.\publish
         Compress-Archive .\SraoClient\publish\* .\publish.zip
       env:
         Solution: SraoClient.sln
         Configuration: Release
         Platform: "Any CPU"
-        PublishDir: ".\\publish"
 
     - name: Create release
       id: create_release
