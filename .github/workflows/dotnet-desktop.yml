@@ -64,7 +64,7 @@ jobs:
         Solution: SraoClient.sln
         Configuration: Release
         Platform: "Any CPU"
-        PublishDir: ".\publish"
+        PublishDir: ".\\publish"
 
     - name: Create release
       id: create_release
