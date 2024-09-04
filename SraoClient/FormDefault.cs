@@ -28,7 +28,7 @@ namespace SraoClient
 
             // Auto update
             Timer timer = new Timer();
-            timer.Interval = (10 * 1000); // 30 secs
+            timer.Interval = (30 * 1000); // 30 secs
             timer.Tick += new EventHandler(AggiornaDashboard);
             timer.Start();
 
