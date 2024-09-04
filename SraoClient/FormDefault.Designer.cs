@@ -224,7 +224,6 @@ namespace SraoClient
             this.MinimumSize = new System.Drawing.Size(1090, 690);
             this.Name = "FormDefault";
             this.Text = "SraoClient";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
