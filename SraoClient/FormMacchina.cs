@@ -52,5 +52,13 @@ namespace SraoClient
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.Show();
         }
+
+        private void listBoxLavori_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Close();
+            }
+        }
     }
 }

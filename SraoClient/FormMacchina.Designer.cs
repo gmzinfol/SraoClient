@@ -51,6 +51,7 @@
             this.listBoxLavori.Size = new System.Drawing.Size(619, 360);
             this.listBoxLavori.Sorted = true;
             this.listBoxLavori.TabIndex = 15;
+            this.listBoxLavori.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxLavori_KeyDown);
             this.listBoxLavori.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxLavori_MouseDoubleClick);
             // 
             // labelTempoMedio

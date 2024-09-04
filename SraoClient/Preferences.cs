@@ -10,7 +10,7 @@ namespace SraoClient
     public class Preferences
     {
         private readonly string cachePath;
-        private string Server { get; set; }
+        public string Server { get; set; }
 
         public Preferences()
         {
