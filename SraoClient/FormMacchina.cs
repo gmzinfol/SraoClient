@@ -28,8 +28,6 @@ namespace SraoClient
             if (data is null)
                 return;
 
-            labelMacchina.Text = macchina.ToString();
-
             if (!data.Ordini.Any())
                 return;
 
@@ -43,7 +41,9 @@ namespace SraoClient
             listBoxLavori.Items.Clear();
             listBoxLavori.DataSource = lavori;
 
+            labelMacchina.Text = macchina.ToString();
             labelTempoMedio.Text = Utils.Average(lavori);
+            labelNumeroLavori.Text = lavori.Count.ToString();
         }
 
         private void listBoxLavori_MouseDoubleClick(object sender, MouseEventArgs e)

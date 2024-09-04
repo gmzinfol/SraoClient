@@ -25,7 +25,7 @@ namespace SraoClient
             Ordini.Clear();
         }
 
-        public async void Update()
+        public async void UpdateAsync()
         {
             try
             {

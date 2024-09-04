@@ -28,7 +28,7 @@ namespace SraoClient
 
             // Auto update
             Timer timer = new Timer();
-            timer.Interval = (30 * 1000); // 30 secs
+            timer.Interval = (10 * 1000); // 30 secs
             timer.Tick += new EventHandler(AggiornaDashboard);
             timer.Start();
 
@@ -131,7 +131,7 @@ namespace SraoClient
             {
                 // Impostazioni does not get information from Data class
             }
-            data.Update();
+            data.UpdateAsync();
         }
 
         private void AggiornaDashboard(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace SraoClient
             }
             else
             {
-                data.Update();
+                data.UpdateAsync();
             }
         }
     }

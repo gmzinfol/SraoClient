@@ -26,17 +26,21 @@ namespace SraoClient
             if (ordine is null)
                 return;
 
-            labelLavori.Text = ordine.Commento;
+            if (!ordine.Lavori.Any())
+                return;
 
-            listBoxLavori.Sorted = false;
-            listBoxLavori.Items.Clear();
             var lavori = ordine.Lavori
                 .OrderBy(x => x.Macchina)
                 .ThenBy(x => x.DataInizio)
                 .ToList();
+
+            listBoxLavori.Sorted = false;
+            listBoxLavori.Items.Clear();
             listBoxLavori.DataSource = lavori;
 
+            labelLavori.Text = ordine.Commento;
             labelTempoMedio.Text = Utils.Average(lavori);
+            labelNumeroLavori.Text = lavori.Count.ToString();
         }
 
         private void listBoxLavori_MouseDoubleClick(object sender, MouseEventArgs e)

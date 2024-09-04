@@ -26,7 +26,7 @@ namespace SraoClient
             if (data is null)
                 return;
 
-            data.Update();
+            data.UpdateAsync();
 
             if (data.Ordini is null)
                 return;

@@ -28,8 +28,6 @@ namespace SraoClient
             if (data is null)
                 return;
 
-            labelProgramma.Text = programma;
-
             if (!data.Ordini.Any())
                 return;
 
@@ -42,7 +40,9 @@ namespace SraoClient
             listBoxLavori.Items.Clear();
             listBoxLavori.DataSource = lavori;
 
+            labelProgramma.Text = programma;
             labelTempoMedio.Text = Utils.Average(lavori);
+            labelNumeroLavori.Text = lavori.Count.ToString();
         }
 
         private void listBoxLavori_MouseDoubleClick(object sender, MouseEventArgs e)

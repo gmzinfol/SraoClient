@@ -35,6 +35,8 @@ namespace SraoClient
             this.labelTempoMedio = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelNumeroLavori = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBoxLavori
@@ -59,7 +61,7 @@ namespace SraoClient
             // 
             this.labelLavori.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLavori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelLavori.Location = new System.Drawing.Point(232, 11);
+            this.labelLavori.Location = new System.Drawing.Point(236, 9);
             this.labelLavori.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLavori.Name = "labelLavori";
             this.labelLavori.Size = new System.Drawing.Size(368, 36);
@@ -70,7 +72,7 @@ namespace SraoClient
             // 
             this.labelTempoMedio.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTempoMedio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelTempoMedio.Location = new System.Drawing.Point(173, 54);
+            this.labelTempoMedio.Location = new System.Drawing.Point(175, 42);
             this.labelTempoMedio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTempoMedio.Name = "labelTempoMedio";
             this.labelTempoMedio.Size = new System.Drawing.Size(427, 36);
@@ -82,7 +84,7 @@ namespace SraoClient
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 37);
@@ -95,7 +97,7 @@ namespace SraoClient
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.label2.Location = new System.Drawing.Point(11, 58);
+            this.label2.Location = new System.Drawing.Point(13, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(154, 29);
@@ -103,12 +105,38 @@ namespace SraoClient
             this.label2.Text = "Tempo medio:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // labelNumeroLavori
+            // 
+            this.labelNumeroLavori.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumeroLavori.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelNumeroLavori.Location = new System.Drawing.Point(129, 71);
+            this.labelNumeroLavori.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNumeroLavori.Name = "labelNumeroLavori";
+            this.labelNumeroLavori.Size = new System.Drawing.Size(472, 36);
+            this.labelNumeroLavori.TabIndex = 25;
+            this.labelNumeroLavori.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.label3.Location = new System.Drawing.Point(13, 75);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 29);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "N° Lavori:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FormOrdine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(613, 454);
+            this.Controls.Add(this.labelNumeroLavori);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTempoMedio);
@@ -136,5 +164,7 @@ namespace SraoClient
         private System.Windows.Forms.Label labelTempoMedio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelNumeroLavori;
+        private System.Windows.Forms.Label label3;
     }
 }
