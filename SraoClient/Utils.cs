@@ -20,7 +20,7 @@ namespace SraoClient
                     return TimeSpan.FromMinutes(tempoMedioTicks).ToString("hh\\:mm\\:ss");
             }
 
-            return String.Empty;
+            return string.Empty;
         }
     }
 }

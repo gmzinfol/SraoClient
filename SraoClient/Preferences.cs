@@ -9,14 +9,14 @@ namespace SraoClient
 {
     public class Preferences
     {
-        public string CachePath;
-        public string Server { get; set; }
+        private readonly string cachePath;
+        private string Server { get; set; }
 
         public Preferences()
         {
             try
             {
-                CachePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.sraoclient";
+                cachePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\.sraoclient";
             }
             catch { return; }
         }
@@ -25,7 +25,7 @@ namespace SraoClient
         {
             try
             {
-                using (StreamReader sr = new StreamReader(CachePath))
+                using (StreamReader sr = new StreamReader(cachePath))
                 {
                     Server = sr.ReadLine();
                 }
@@ -37,7 +37,7 @@ namespace SraoClient
         {
             try
             {
-                using (TextWriter tw = new StreamWriter(CachePath))
+                using (TextWriter tw = new StreamWriter(cachePath))
                 {
                     tw.WriteLine(Server);
                 }

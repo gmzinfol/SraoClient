@@ -19,7 +19,7 @@ namespace SraoClient
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormDefault());
         }
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]

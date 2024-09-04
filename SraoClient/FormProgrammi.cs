@@ -13,29 +13,30 @@ namespace SraoClient
 {
     public partial class FormProgrammi : Form
     {
-        Data Data;
+        private readonly Data data;
 
         public FormProgrammi(Data data)
         {
             InitializeComponent();
-            Data = data;
+            this.data = data;
         }
 
         private void FormProgrammi_Load(object sender, EventArgs e)
         {
-            if (Data is null)
+            if (data is null)
                 return;
 
-            Data.Update();
+            data.Update();
 
-            if (!Data.Ordini.Any())
+            if (!data.Ordini.Any())
                 return;
 
-            var programmi = Data.Ordini
+            var programmi = data.Ordini
                 .SelectMany(x => x.Lavori)
                 .Select(x => x.Programma)
                 .Distinct()
                 .ToList();
+
             listBoxProgrammi.Sorted = false;
             listBoxProgrammi.Items.Clear();
             listBoxProgrammi.DataSource = programmi;
@@ -43,13 +44,13 @@ namespace SraoClient
 
         private void btnCerca_Click(object sender, EventArgs e)
         {
-            var programmi = Data.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
+            var programmi = data.Ordini.SelectMany(x => x.Lavori).Select(x => x.Programma).Distinct().ToList();
             listBoxProgrammi.DataSource = programmi.Where(x => x.Contains(txtCerca.Text)).ToList();
         }
 
         private void listBoxProgrammi_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            FormProgramma dialog = new FormProgramma(listBoxProgrammi.SelectedItem.ToString(), Data);
+            FormProgramma dialog = new FormProgramma(listBoxProgrammi.SelectedItem.ToString(), data);
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.Show();
         }

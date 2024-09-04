@@ -1,7 +1,7 @@
 ﻿
 namespace SraoClient
 {
-    partial class Form1
+    partial class FormDefault
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -29,7 +29,7 @@ namespace SraoClient
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDefault));
             this.btnMenuPreferenze = new System.Windows.Forms.Button();
             this.btnMenuOrdini = new System.Windows.Forms.Button();
             this.btnMenuDashboard = new System.Windows.Forms.Button();
@@ -39,6 +39,7 @@ namespace SraoClient
             this.label1 = new System.Windows.Forms.Label();
             this.btnAggiorna = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMenuMacchine = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace SraoClient
             this.btnMenuPreferenze.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuPreferenze.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuPreferenze.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
-            this.btnMenuPreferenze.Location = new System.Drawing.Point(0, 222);
+            this.btnMenuPreferenze.Location = new System.Drawing.Point(0, 296);
             this.btnMenuPreferenze.Margin = new System.Windows.Forms.Padding(4);
             this.btnMenuPreferenze.Name = "btnMenuPreferenze";
             this.btnMenuPreferenze.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
@@ -75,7 +76,7 @@ namespace SraoClient
             this.btnMenuOrdini.Name = "btnMenuOrdini";
             this.btnMenuOrdini.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnMenuOrdini.Size = new System.Drawing.Size(267, 74);
-            this.btnMenuOrdini.TabIndex = 3;
+            this.btnMenuOrdini.TabIndex = 2;
             this.btnMenuOrdini.Text = "Ordini";
             this.btnMenuOrdini.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuOrdini.UseVisualStyleBackColor = false;
@@ -94,7 +95,7 @@ namespace SraoClient
             this.btnMenuDashboard.Name = "btnMenuDashboard";
             this.btnMenuDashboard.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnMenuDashboard.Size = new System.Drawing.Size(267, 74);
-            this.btnMenuDashboard.TabIndex = 0;
+            this.btnMenuDashboard.TabIndex = 1;
             this.btnMenuDashboard.Text = "Dashboard";
             this.btnMenuDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuDashboard.UseVisualStyleBackColor = false;
@@ -105,6 +106,7 @@ namespace SraoClient
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
             this.panelMenu.Controls.Add(this.label2);
             this.panelMenu.Controls.Add(this.btnMenuPreferenze);
+            this.panelMenu.Controls.Add(this.btnMenuMacchine);
             this.panelMenu.Controls.Add(this.btnMenuProgrammi);
             this.panelMenu.Controls.Add(this.btnMenuOrdini);
             this.panelMenu.Controls.Add(this.btnMenuDashboard);
@@ -141,7 +143,7 @@ namespace SraoClient
             this.btnMenuProgrammi.Name = "btnMenuProgrammi";
             this.btnMenuProgrammi.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.btnMenuProgrammi.Size = new System.Drawing.Size(267, 74);
-            this.btnMenuProgrammi.TabIndex = 6;
+            this.btnMenuProgrammi.TabIndex = 3;
             this.btnMenuProgrammi.Text = "Programmi";
             this.btnMenuProgrammi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuProgrammi.UseVisualStyleBackColor = false;
@@ -173,7 +175,7 @@ namespace SraoClient
             this.btnAggiorna.Margin = new System.Windows.Forms.Padding(4);
             this.btnAggiorna.Name = "btnAggiorna";
             this.btnAggiorna.Size = new System.Drawing.Size(113, 86);
-            this.btnAggiorna.TabIndex = 3;
+            this.btnAggiorna.TabIndex = 5;
             this.btnAggiorna.Text = "Aggiorna";
             this.btnAggiorna.UseVisualStyleBackColor = false;
             this.btnAggiorna.Click += new System.EventHandler(this.btnAggiorna_Click);
@@ -190,7 +192,26 @@ namespace SraoClient
             this.panel1.Size = new System.Drawing.Size(1072, 86);
             this.panel1.TabIndex = 1;
             // 
-            // Form1
+            // btnMenuMacchine
+            // 
+            this.btnMenuMacchine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(110)))), ((int)(((byte)(168)))));
+            this.btnMenuMacchine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuMacchine.FlatAppearance.BorderSize = 0;
+            this.btnMenuMacchine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuMacchine.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuMacchine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(234)))), ((int)(((byte)(234)))));
+            this.btnMenuMacchine.Location = new System.Drawing.Point(0, 222);
+            this.btnMenuMacchine.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMenuMacchine.Name = "btnMenuMacchine";
+            this.btnMenuMacchine.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.btnMenuMacchine.Size = new System.Drawing.Size(267, 74);
+            this.btnMenuMacchine.TabIndex = 0;
+            this.btnMenuMacchine.Text = "Macchine";
+            this.btnMenuMacchine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuMacchine.UseVisualStyleBackColor = false;
+            this.btnMenuMacchine.Click += new System.EventHandler(this.btnMenuMacchine_Click);
+            // 
+            // FormDefault
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -201,7 +222,7 @@ namespace SraoClient
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1090, 690);
-            this.Name = "Form1";
+            this.Name = "FormDefault";
             this.Text = "SraoClient";
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -219,6 +240,7 @@ namespace SraoClient
         private System.Windows.Forms.Button btnAggiorna;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnMenuProgrammi;
+        private System.Windows.Forms.Button btnMenuMacchine;
     }
 }
 

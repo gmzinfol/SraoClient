@@ -12,11 +12,12 @@ using System.Globalization;
 
 namespace SraoClient
 {
-    public partial class Form1 : Form
+    public partial class FormDefault : Form
     {
-        Preferences Preferences;
-        Data DataOrdini;
-        public Form1()
+        private readonly Preferences preferences;
+        private readonly Data data;
+
+        public FormDefault()
         {
             InitializeComponent();
 
@@ -27,17 +28,17 @@ namespace SraoClient
 
             // Auto update
             Timer timer = new Timer();
-            timer.Interval = (30 * 1000); // 30 secs
+            timer.Interval = (5 * 1000); // 30 secs
             timer.Tick += new EventHandler(AggiornaDashboard);
             timer.Start();
 
             // Load Preferences object
-            Preferences = new Preferences();
-            Preferences.Load(); // Carica preferenze
+            preferences = new Preferences();
+            preferences.Load(); // Carica preferenze
 
             // Load Dashboard form as default
-            DataOrdini = new Data(Preferences.Server);
-            FormDashboard fd = new FormDashboard(DataOrdini);
+            data = new Data(preferences.Server);
+            FormDashboard fd = new FormDashboard(data);
             fd.MdiParent = this;
             fd.Dock = DockStyle.Fill;
             fd.Show();
@@ -48,7 +49,7 @@ namespace SraoClient
         {
             OnClick(sender);
 
-            FormDashboard fd = new FormDashboard(DataOrdini);
+            FormDashboard fd = new FormDashboard(data);
             fd.MdiParent = this;
             fd.Dock = DockStyle.Fill;
             fd.Show();
@@ -58,30 +59,40 @@ namespace SraoClient
         {
             OnClick(sender);
 
-            FormOrdini fd = new FormOrdini(DataOrdini);
-            fd.MdiParent = this;
-            fd.Dock = DockStyle.Fill;
-            fd.Show();
+            FormOrdini fo = new FormOrdini(data);
+            fo.MdiParent = this;
+            fo.Dock = DockStyle.Fill;
+            fo.Show();
         }
 
         private void btnMenuProgrammi_Click(object sender, EventArgs e)
         {
             OnClick(sender);
 
-            FormProgrammi fd = new FormProgrammi(DataOrdini);
-            fd.MdiParent = this;
-            fd.Dock = DockStyle.Fill;
-            fd.Show();
+            FormProgrammi fp = new FormProgrammi(data);
+            fp.MdiParent = this;
+            fp.Dock = DockStyle.Fill;
+            fp.Show();
         }
 
         private void btnMenuPreferenze_Click(object sender, EventArgs e)
         {
             OnClick(sender);
 
-            FormImpostazioni fd = new FormImpostazioni(Preferences, DataOrdini);
-            fd.MdiParent = this;
-            fd.Dock = DockStyle.Fill;
-            fd.Show();
+            FormImpostazioni fp = new FormImpostazioni(preferences, data);
+            fp.MdiParent = this;
+            fp.Dock = DockStyle.Fill;
+            fp.Show();
+        }
+
+        private void btnMenuMacchine_Click(object sender, EventArgs e)
+        {
+            OnClick(sender);
+
+            FormMacchine fm = new FormMacchine(data);
+            fm.MdiParent = this;
+            fm.Dock = DockStyle.Fill;
+            fm.Show();
         }
 
         public void OnClick(object sender)
@@ -90,6 +101,7 @@ namespace SraoClient
             btnMenuOrdini.BackColor = Color.FromArgb(50, 110, 168);
             btnMenuProgrammi.BackColor = Color.FromArgb(50, 110, 168);
             btnMenuPreferenze.BackColor = Color.FromArgb(50, 110, 168);
+            btnMenuMacchine.BackColor = Color.FromArgb(50, 110, 168);
 
             (sender as Button).BackColor = Color.FromArgb(60, 132, 201);
 
@@ -111,21 +123,29 @@ namespace SraoClient
             {
                 btnMenuProgrammi.PerformClick();
             }
+            else if (ActiveMdiChild is FormMacchine)
+            {
+                btnMenuMacchine.PerformClick();
+            }
             else if (ActiveMdiChild is FormImpostazioni)
             {
-                DataOrdini.Update();
+                // Impostazioni does not get information from Data class
             }
+            data.Update();
         }
 
         private void AggiornaDashboard(object sender, EventArgs e)
         {
+            // If you are in the Dashboard you should refresh the window.
+            // If you are in another form you should not refresh the window
+            // since refreshing clears whatever the user is doing.
             if (ActiveMdiChild is FormDashboard)
             {
                 btnMenuDashboard.PerformClick();
             }
             else
             {
-                DataOrdini.Update();
+                data.Update();
             }
         }
     }

@@ -13,21 +13,21 @@ namespace SraoClient
 {
     public partial class FormLavoro : Form
     {
-        public Lavoro Lavoro;
+        private readonly Lavoro lavoro;
 
         public FormLavoro(Lavoro lavoro)
         {
             InitializeComponent();
-            Lavoro = lavoro;
+            this.lavoro = lavoro;
         }
 
         private void FormLavoro_Load(object sender, EventArgs e)
         {
-            if (Lavoro is null)
+            if (lavoro is null)
                 return;
 
             string message;
-            if (Lavoro.StatoOk)
+            if (lavoro.StatoOk)
             {
                 labelNomeMacchina.ForeColor = Color.FromArgb(15, 120, 15);
                 message = "Completato";
@@ -38,32 +38,32 @@ namespace SraoClient
                 message = "Non completato";
             }
 
-            if (Lavoro.Stato == null)
+            if (lavoro.Stato == null)
             {
                 labelNomeMacchina.Text = message;
             }
             else
             {
-                labelNomeMacchina.Text = Lavoro.Stato;
+                labelNomeMacchina.Text = lavoro.Stato;
             }
 
-            labelMacchina.Text = Lavoro.Macchina.ToString();
-            labelProgramma.Text = Lavoro.Programma;
-            labelOrdine.Text = Lavoro.OrdineCommento;
+            labelMacchina.Text = lavoro.Macchina.ToString();
+            labelProgramma.Text = lavoro.Programma;
+            labelOrdine.Text = lavoro.OrdineCommento;
             labelLavoro.Text = String.Format(
                 "{0} di {1}",
-                Lavoro.PezziLavorati.ToString(),
-                (Lavoro.PezziLavorati + Lavoro.PezziRimanenti).ToString());
+                lavoro.PezziLavorati.ToString(),
+                (lavoro.PezziLavorati + lavoro.PezziRimanenti).ToString());
 
             DateTime temp = new DateTime();
-            if (Lavoro.DataInizio != temp && Lavoro.DataFine != temp)
+            if (lavoro.DataInizio != temp && lavoro.DataFine != temp)
             {
-                labelDataInizio.Text = Lavoro.DataInizio.ToString();
-                labelDataFine.Text = Lavoro.DataFine.ToString();
-                labelTempoImpiegato.Text = (Lavoro.DataFine - Lavoro.DataInizio).ToString();
+                labelDataInizio.Text = lavoro.DataInizio.ToString();
+                labelDataFine.Text = lavoro.DataFine.ToString();
+                labelTempoImpiegato.Text = (lavoro.DataFine - lavoro.DataInizio).ToString();
                 labelAggiornamento.Text = String.Format(
                     "Ultimo aggiornamento avvenuto il: {0}",
-                    Lavoro.DataFine);
+                    lavoro.DataFine);
             }
         }
 
@@ -71,7 +71,7 @@ namespace SraoClient
         {
             if (e.KeyCode == Keys.Escape)
             {
-                this.Close();
+                Close();
             }
         }
     }

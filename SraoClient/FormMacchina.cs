@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SraoClient.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,33 +8,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SraoClient.Models;
 
 namespace SraoClient
 {
-    public partial class FormOrdine : Form
+    public partial class FormMacchina : Form
     {
-        private readonly Ordine ordine;
+        private readonly int macchina;
+        private readonly Data data;
 
-        public FormOrdine(Ordine ordine)
+        public FormMacchina(int macchina, Data data)
         {
             InitializeComponent();
-            this.ordine = ordine;
+            this.macchina = macchina;
+            this.data = data;
         }
 
-        private void FormOrdine_Load(object sender, EventArgs e)
+        private void FormMacchina_Load(object sender, EventArgs e)
         {
-            if (ordine is null)
+            if (data is null)
                 return;
 
-            labelLavori.Text = ordine.Commento;
+            labelMacchina.Text = macchina.ToString();
+
+            if (!data.Ordini.Any())
+                return;
+
+            var lavori = data.Ordini
+                .SelectMany(x => x.Lavori)
+                .Where(x => x.StatoOk && x.Macchina == macchina)
+                .OrderByDescending(x => x.DataFine)
+                .ToList();
 
             listBoxLavori.Sorted = false;
             listBoxLavori.Items.Clear();
-            var lavori = ordine.Lavori
-                .OrderBy(x => x.Macchina)
-                .ThenBy(x => x.DataInizio)
-                .ToList();
             listBoxLavori.DataSource = lavori;
 
             labelTempoMedio.Text = Utils.Average(lavori);
@@ -44,14 +51,6 @@ namespace SraoClient
             FormLavoro dialog = new FormLavoro(listBoxLavori.SelectedItem as Lavoro);
             dialog.StartPosition = FormStartPosition.CenterScreen;
             dialog.Show();
-        }
-
-        private void listBoxLavori_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
-            }
         }
     }
 }

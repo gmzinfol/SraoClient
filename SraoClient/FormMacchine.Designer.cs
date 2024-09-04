@@ -1,7 +1,6 @@
-﻿
-namespace SraoClient
+﻿namespace SraoClient
 {
-    partial class FormProgrammi
+    partial class FormMacchine
     {
         /// <summary>
         /// Required designer variable.
@@ -30,17 +29,17 @@ namespace SraoClient
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelProgrammi = new System.Windows.Forms.Label();
+            this.labelMacchine = new System.Windows.Forms.Label();
             this.btnCerca = new System.Windows.Forms.Button();
             this.txtCerca = new System.Windows.Forms.TextBox();
-            this.listBoxProgrammi = new System.Windows.Forms.ListBox();
+            this.listBoxMacchine = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
-            this.panel1.Controls.Add(this.labelProgrammi);
+            this.panel1.Controls.Add(this.labelMacchine);
             this.panel1.Controls.Add(this.btnCerca);
             this.panel1.Controls.Add(this.txtCerca);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -48,19 +47,19 @@ namespace SraoClient
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1090, 81);
-            this.panel1.TabIndex = 8;
+            this.panel1.TabIndex = 9;
             // 
-            // labelProgrammi
+            // labelMacchine
             // 
-            this.labelProgrammi.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProgrammi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.labelProgrammi.Location = new System.Drawing.Point(13, 9);
-            this.labelProgrammi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelProgrammi.Name = "labelProgrammi";
-            this.labelProgrammi.Size = new System.Drawing.Size(589, 36);
-            this.labelProgrammi.TabIndex = 6;
-            this.labelProgrammi.Text = "Programmi";
-            this.labelProgrammi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelMacchine.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMacchine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.labelMacchine.Location = new System.Drawing.Point(13, 9);
+            this.labelMacchine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMacchine.Name = "labelMacchine";
+            this.labelMacchine.Size = new System.Drawing.Size(589, 36);
+            this.labelMacchine.TabIndex = 6;
+            this.labelMacchine.Text = "Macchine";
+            this.labelMacchine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCerca
             // 
@@ -91,35 +90,34 @@ namespace SraoClient
             this.txtCerca.TabIndex = 2;
             this.txtCerca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCerca_KeyDown);
             // 
-            // listBoxProgrammi
+            // listBoxMacchine
             // 
-            this.listBoxProgrammi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
-            this.listBoxProgrammi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxProgrammi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxProgrammi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxProgrammi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.listBoxProgrammi.ItemHeight = 20;
-            this.listBoxProgrammi.Location = new System.Drawing.Point(0, 81);
-            this.listBoxProgrammi.Margin = new System.Windows.Forms.Padding(4);
-            this.listBoxProgrammi.Name = "listBoxProgrammi";
-            this.listBoxProgrammi.Size = new System.Drawing.Size(1090, 609);
-            this.listBoxProgrammi.Sorted = true;
-            this.listBoxProgrammi.TabIndex = 9;
-            this.listBoxProgrammi.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxProgrammi_MouseDoubleClick);
+            this.listBoxMacchine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(214)))), ((int)(((byte)(214)))));
+            this.listBoxMacchine.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxMacchine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxMacchine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxMacchine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
+            this.listBoxMacchine.ItemHeight = 20;
+            this.listBoxMacchine.Location = new System.Drawing.Point(0, 81);
+            this.listBoxMacchine.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxMacchine.Name = "listBoxMacchine";
+            this.listBoxMacchine.Size = new System.Drawing.Size(1090, 609);
+            this.listBoxMacchine.Sorted = true;
+            this.listBoxMacchine.TabIndex = 10;
+            this.listBoxMacchine.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxMacchine_MouseDoubleClick);
             // 
-            // FormProgrammi
+            // FormMacchine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1090, 690);
-            this.Controls.Add(this.listBoxProgrammi);
+            this.Controls.Add(this.listBoxMacchine);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormProgrammi";
-            this.Text = "FormProgrammi";
-            this.Load += new System.EventHandler(this.FormProgrammi_Load);
+            this.Name = "FormMacchine";
+            this.Text = "FormMacchine";
+            this.Load += new System.EventHandler(this.FormMacchine_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -128,11 +126,10 @@ namespace SraoClient
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelProgrammi;
-        private System.Windows.Forms.Button btnCerca;
+        private System.Windows.Forms.Label labelMacchine;
         private System.Windows.Forms.TextBox txtCerca;
-        private System.Windows.Forms.ListBox listBoxProgrammi;
+        private System.Windows.Forms.ListBox listBoxMacchine;
+        private System.Windows.Forms.Button btnCerca;
     }
 }

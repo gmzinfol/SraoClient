@@ -13,42 +13,42 @@ namespace SraoClient
 {
     public partial class FormImpostazioni : Form
     {
-        Preferences Preferences;
-        Data Data;
+        private readonly Preferences preferences;
+        private readonly Data data;
 
         public FormImpostazioni(Preferences prefs, Data data)
         {
             InitializeComponent();
 
-            Preferences = prefs;
-            Data = data;
+            preferences = prefs;
+            this.data = data;
         }
 
         private void FormImpostazioni_Load(object sender, EventArgs e)
         {
-            if (Preferences is null)
+            if (preferences is null)
                 return;
 
-            Preferences.Load();
+            preferences.Load();
 
-            if (Preferences.Server is null)
+            if (preferences.Server is null)
                 return;
 
-            txtScambio.Text = Preferences.Server;
+            txtScambio.Text = preferences.Server;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Preferences is null)
+            if (preferences is null)
                 return;
 
-            Preferences.Server = txtScambio.Text;
-            Preferences.Save();
+            preferences.Server = txtScambio.Text;
+            preferences.Save();
 
-            if (Data is null)
+            if (data is null)
                 return;
 
-            Data.ChangeHost(Preferences.Server);
+            data.ChangeHost(preferences.Server);
         }
     }
 }

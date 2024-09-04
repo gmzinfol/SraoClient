@@ -13,22 +13,22 @@ namespace SraoClient
 {
     public partial class FormDashboard : Form
     {
-        Data Data;
+        private readonly Data data;
 
         public FormDashboard(Data data)
         {
             InitializeComponent();
-            Data = data;
+            this.data = data;
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)
         {
-            if (Data is null)
+            if (data is null)
                 return;
 
-            Data.Update();
+            data.Update();
 
-            if (Data.Ordini is null)
+            if (data.Ordini is null)
                 return;
 
             labelAggiornamento.Text = String.Format(
@@ -36,7 +36,7 @@ namespace SraoClient
                 DateTime.Now);
 
             // Dashboard
-            var lavoriSvoltiOggi = Data.Ordini
+            var lavoriSvoltiOggi = data.Ordini
                 .SelectMany(x => x.Lavori)
                 .Where(x => x.DataInizio.Date == DateTime.Now.Date);
 
@@ -59,10 +59,10 @@ namespace SraoClient
             }
 
             // Last Lavoro
-            if (!Data.Ordini.Any()) 
+            if (!data.Ordini.Any()) 
                 return;
 
-            Lavoro last = Data.Ordini
+            Lavoro last = data.Ordini
                 .SelectMany(x => x.Lavori)
                 .OrderBy(x => x.DataInizio)
                 .Last();

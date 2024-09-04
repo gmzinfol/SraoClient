@@ -13,31 +13,33 @@ namespace SraoClient
 {
     public partial class FormProgramma : Form
     {
-        string Programma;
-        Data Data;
+        private readonly string programma;
+        private readonly Data data;
 
         public FormProgramma(string programma, Data data)
         {
             InitializeComponent();
-            Programma = programma;
-            Data = data;
+            this.programma = programma;
+            this.data = data;
         }
 
         private void FormProgramma_Load(object sender, EventArgs e)
         {
-            if (Data is null)
+            if (data is null)
                 return;
 
-            labelProgramma.Text = Programma;
+            labelProgramma.Text = programma;
 
-            if (!Data.Ordini.Any())
+            if (!data.Ordini.Any())
                 return;
 
-            var lavori = Data.Ordini.SelectMany(x => x.Lavori)
-                .Where(x => x.StatoOk && x.Programma == Programma)
-                .OrderBy(x => x.OrdineCommento)
+            var lavori = data.Ordini.SelectMany(x => x.Lavori)
+                .Where(x => x.StatoOk && x.Programma == programma)
+                .OrderByDescending(x => x.DataFine)
                 .ToList();
 
+            listBoxLavori.Sorted = false;
+            listBoxLavori.Items.Clear();
             listBoxLavori.DataSource = lavori;
 
             labelTempoMedio.Text = Utils.Average(lavori);

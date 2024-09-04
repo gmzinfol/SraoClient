@@ -10,18 +10,18 @@ namespace SraoClient
 {
     public class Data
     {
-        private Srao _srao;
+        private SraoApi srao;
         public List<Ordine> Ordini;
 
         public Data(string host)
         {
-            _srao = new Srao(host);
+            srao = new SraoApi(host);
             Ordini = new List<Ordine>();
         }
 
         public void ChangeHost(string host)
         {
-            _srao = new Srao(host);
+            srao = new SraoApi(host);
             Ordini.Clear();
         }
 
@@ -29,7 +29,7 @@ namespace SraoClient
         {
             try
             {
-                Ordini = await _srao.GetOrdiniAsync();
+                Ordini = await srao.GetOrdiniAsync();
                 // Ordini = await _srao.GetOrdiniAnnoAsync();
             }
             catch (Exception ex)
