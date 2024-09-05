@@ -1,41 +1,112 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using System.Collections.Generic;
-using System.Net.Http;
-using Newtonsoft.Json;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 using SraoClient.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Runtime.Remoting.Messaging;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace SraoClient
 {
     public class SraoApi
     {
         private readonly HttpClient http;
-        private readonly string url;
+        private readonly string baseUrl;
 
-        public SraoApi(string url)
+        public SraoApi(string baseUrl)
         {
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
             http = new HttpClient(clientHandler);
-            this.url = url;
+            this.baseUrl = baseUrl;
         }
 
-        public async Task<List<Ordine>> GetOrdiniAsync()
+        public async Task<Option<List<Lavoro>>> GetLavoriOggiAsync()
         {
-            Console.WriteLine(url + "/Srao/ordini");
-            string json = await http.GetStringAsync(url + "/Srao/ordini");
-            var ordini = JsonConvert.DeserializeObject<List<Ordine>>(json);
-            return ordini;
+            try
+            {
+                string json = await http.GetStringAsync(baseUrl + "/Srao/lavorirec");
+                var lavori = JsonConvert.DeserializeObject<List<Lavoro>>(json);
+                return Option<List<Lavoro>>.Some(lavori);
+            }
+            catch
+            {
+                return Option<List<Lavoro>>.None;
+            }
         }
 
-        public async Task<List<Ordine>> GetOrdiniAnnoAsync()
+        public async Task<Option<Lavoro>> GetUltimoLavoroAsync()
         {
-            string json = await http.GetStringAsync(url + "/Srao/ordinirec");
-            var ordini = JsonConvert.DeserializeObject<List<Ordine>>(json);
-            return ordini;
+            try
+            {
+                string json = await http.GetStringAsync(baseUrl + "/Srao/ultimolavoro");
+                var lavoro = JsonConvert.DeserializeObject<Lavoro>(json);
+                return Option<Lavoro>.Some(lavoro);
+            }
+            catch
+            {
+                return Option<Lavoro>.None;
+            }
+        }
+
+        public async Task<Option<List<Ordine>>> GetOrdiniAsync()
+        {
+            try
+            {
+                string json = await http.GetStringAsync(baseUrl + "/Srao/ordini");
+                var ordini = JsonConvert.DeserializeObject<List<Ordine>>(json);
+                return Option<List<Ordine>>.Some(ordini);
+            }
+            catch
+            {
+                return Option<List<Ordine>>.None;
+            }
+        }
+
+        public async Task<Option<List<Ordine>>> GetOrdiniRecentiAsync()
+        {
+            try
+            {
+                string json = await http.GetStringAsync(baseUrl + "/Srao/ordinirec");
+                var ordini = JsonConvert.DeserializeObject<List<Ordine>>(json);
+                return Option<List<Ordine>>.Some(ordini);
+            }
+            catch
+            {
+                return Option<List<Ordine>>.None;
+            }
+        }
+
+        public async Task<Option<List<Ordine>>> GetOrdiniAnnoAsync(int anno)
+        {
+            try
+            {
+                string url = $"{baseUrl}/Srao/ordini/{anno}";
+                string json = await http.GetStringAsync(url);
+                var ordini = JsonConvert.DeserializeObject<List<Ordine>>(json);
+                return Option<List<Ordine>>.Some(ordini);
+            }
+            catch
+            {
+                return Option<List<Ordine>>.None;
+            }
+        }
+
+        public async Task<Option<Ordine>> GetOrdineAsync(int anno, int n)
+        {
+            try
+            {
+                string url = $"{baseUrl}/Srao/ordini/{anno}/{n}";
+                string json = await http.GetStringAsync(url);
+                var ordine = JsonConvert.DeserializeObject<Ordine>(json);
+                return Option<Ordine>.Some(ordine);
+            }
+            catch
+            {
+                return Option<Ordine>.None;
+            }
         }
     }
 }

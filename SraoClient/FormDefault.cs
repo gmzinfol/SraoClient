@@ -15,7 +15,7 @@ namespace SraoClient
     public partial class FormDefault : Form
     {
         private readonly Preferences preferences;
-        private readonly Data data;
+        private readonly SraoRepository repository;
 
         public FormDefault()
         {
@@ -36,9 +36,12 @@ namespace SraoClient
             preferences = new Preferences();
             preferences.Load(); // Carica preferenze
 
+            // Create repository
+            var sraoApi = new SraoApi(preferences.Server);
+            repository = new SraoRepository(sraoApi);
+
             // Load Dashboard form as default
-            data = new Data(preferences.Server);
-            FormDashboard fd = new FormDashboard(data);
+            FormDashboard fd = new FormDashboard(repository);
             fd.MdiParent = this;
             fd.Dock = DockStyle.Fill;
             fd.Show();
@@ -49,7 +52,7 @@ namespace SraoClient
         {
             OnClick(sender);
 
-            FormDashboard fd = new FormDashboard(data);
+            FormDashboard fd = new FormDashboard(repository);
             fd.MdiParent = this;
             fd.Dock = DockStyle.Fill;
             fd.Show();
@@ -59,7 +62,7 @@ namespace SraoClient
         {
             OnClick(sender);
 
-            FormOrdini fo = new FormOrdini(data);
+            FormOrdini fo = new FormOrdini(repository);
             fo.MdiParent = this;
             fo.Dock = DockStyle.Fill;
             fo.Show();
@@ -69,30 +72,30 @@ namespace SraoClient
         {
             OnClick(sender);
 
-            FormProgrammi fp = new FormProgrammi(data);
-            fp.MdiParent = this;
-            fp.Dock = DockStyle.Fill;
-            fp.Show();
+            // FormProgrammi fp = new FormProgrammi(data);
+            // fp.MdiParent = this;
+            // fp.Dock = DockStyle.Fill;
+            // fp.Show();
         }
 
         private void btnMenuPreferenze_Click(object sender, EventArgs e)
         {
             OnClick(sender);
 
-            FormImpostazioni fp = new FormImpostazioni(preferences, data);
-            fp.MdiParent = this;
-            fp.Dock = DockStyle.Fill;
-            fp.Show();
+            // FormImpostazioni fp = new FormImpostazioni(preferences, data);
+            // fp.MdiParent = this;
+            // fp.Dock = DockStyle.Fill;
+            // fp.Show();
         }
 
         private void btnMenuMacchine_Click(object sender, EventArgs e)
         {
             OnClick(sender);
 
-            FormMacchine fm = new FormMacchine(data);
-            fm.MdiParent = this;
-            fm.Dock = DockStyle.Fill;
-            fm.Show();
+            // FormMacchine fm = new FormMacchine(data);
+            // fm.MdiParent = this;
+            // fm.Dock = DockStyle.Fill;
+            // fm.Show();
         }
 
         public void OnClick(object sender)
@@ -131,7 +134,7 @@ namespace SraoClient
             {
                 // Impostazioni does not get information from Data class
             }
-            data.UpdateAsync();
+            // data.UpdateAsync();
         }
 
         private void AggiornaDashboard(object sender, EventArgs e)
@@ -145,7 +148,7 @@ namespace SraoClient
             }
             else
             {
-                data.UpdateAsync();
+                // data.UpdateAsync();
             }
         }
     }

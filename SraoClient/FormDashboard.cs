@@ -13,95 +13,82 @@ namespace SraoClient
 {
     public partial class FormDashboard : Form
     {
-        private readonly Data data;
+        private readonly SraoRepository repository;
 
-        public FormDashboard(Data data)
+        public FormDashboard(SraoRepository repository)
         {
             InitializeComponent();
-            this.data = data;
+            this.repository = repository;
         }
 
-        private void FormDashboard_Load(object sender, EventArgs e)
+        private async void FormDashboard_Load(object sender, EventArgs e)
         {
-            if (data is null)
-                return;
-
-            data.UpdateAsync();
-
-            if (data.Ordini is null)
-                return;
-
             labelAggiornamento.Text = String.Format(
                 "Ultimo aggiornamento avvenuto il: {0}",
                 DateTime.Now);
 
-            // Dashboard
-            var lavoriSvoltiOggi = data.Ordini
-                .SelectMany(x => x.Lavori)
-                .Where(x => x.DataInizio.Date == DateTime.Now.Date);
-
-            lblLavoriOggi.Text = lavoriSvoltiOggi.Count().ToString();
-
-            lblTempoMedioOggi.Text = Utils.Average(lavoriSvoltiOggi);
-
-            var ordiniSvolti = lavoriSvoltiOggi.Select(x => x.OrdineCommento).Distinct();
-            foreach (string ordine in ordiniSvolti)
+            // Statistiche lavori svolti oggi
+            var lavoriSvoltiOggiOption = await repository.GetLavoriOggiAsync();
+            if (lavoriSvoltiOggiOption.IsSome(out var lavoriSvoltiOggi))
             {
-                try
+                lblLavoriOggi.Text = lavoriSvoltiOggi.Count().ToString();
+                lblTempoMedioOggi.Text = Utils.Average(lavoriSvoltiOggi);
+
+                var ordiniSvolti = lavoriSvoltiOggi.Select(x => x.OrdineCommento).Distinct();
+                foreach (string ordine in ordiniSvolti)
                 {
-                    lblOrdiniOggi.Text += ordine.Split()[0];
+                    try
+                    {
+                        lblOrdiniOggi.Text += ordine.Split()[0];
+                    }
+                    catch
+                    {
+                        lblOrdiniOggi.Text += ordine;
+                    }
+                    lblOrdiniOggi.Text += " ";
                 }
-                catch
+            }
+
+            // Statistiche ultimo lavoro
+            var ultimoLavoroOption = await repository.GetUltimoLavoroAsync();
+            if (ultimoLavoroOption.IsSome(out var ultimoLavoro))
+            {
+                string message;
+                if (ultimoLavoro.StatoOk)
                 {
-                    lblOrdiniOggi.Text += ordine;
+                    labelNomeMacchina.ForeColor = Color.FromArgb(15, 120, 15);
+                    message = "Completato";
                 }
-                lblOrdiniOggi.Text += " ";
-            }
+                else
+                {
+                    labelNomeMacchina.ForeColor = Color.FromArgb(175, 120, 15);
+                    message = "Non completato";
+                }
 
-            // Last Lavoro
-            if (!data.Ordini.Any()) 
-                return;
+                if (ultimoLavoro.Stato is null)
+                {
+                    labelNomeMacchina.Text = message;
+                }
+                else
+                {
+                    labelNomeMacchina.Text = ultimoLavoro.Stato;
+                }
 
-            Lavoro last = data.Ordini
-                .SelectMany(x => x.Lavori)
-                .OrderBy(x => x.DataInizio)
-                .Last();
+                labelMacchina.Text = ultimoLavoro.Macchina.ToString();
+                labelProgramma.Text = ultimoLavoro.Programma;
+                labelOrdine.Text = ultimoLavoro.OrdineCommento.ToString();
+                labelLavoro.Text = String.Format(
+                    "{0} di {1}",
+                    ultimoLavoro.PezziLavorati.ToString(),
+                    (ultimoLavoro.PezziLavorati + ultimoLavoro.PezziRimanenti).ToString());
 
-            string message;
-            if (last.StatoOk)
-            {
-                labelNomeMacchina.ForeColor = Color.FromArgb(15, 120, 15);
-                message = "Completato";
-            }
-            else
-            {
-                labelNomeMacchina.ForeColor = Color.FromArgb(175, 120, 15);
-                message = "Non completato";
-            }
-
-            if (last.Stato is null)
-            {
-                labelNomeMacchina.Text = message;
-            }
-            else
-            {
-                labelNomeMacchina.Text = last.Stato;
-            }
-
-            labelMacchina.Text = last.Macchina.ToString();
-            labelProgramma.Text = last.Programma;
-            labelOrdine.Text = last.OrdineCommento.ToString();
-            labelLavoro.Text = String.Format(
-                "{0} di {1}",
-                last.PezziLavorati.ToString(),
-                (last.PezziLavorati + last.PezziRimanenti).ToString());
-
-            DateTime temp = new DateTime();
-            if (last.DataInizio != temp && last.DataFine != temp)
-            {
-                labelTempoImpiegato.Text = (last.DataFine - last.DataInizio).ToString();
-                labelDataInizio.Text = last.DataInizio.ToString();
-                labelDataFine.Text = last.DataFine.ToString();
+                DateTime temp = new DateTime();
+                if (ultimoLavoro.DataInizio != temp && ultimoLavoro.DataFine != temp)
+                {
+                    labelTempoImpiegato.Text = (ultimoLavoro.DataFine - ultimoLavoro.DataInizio).ToString();
+                    labelDataInizio.Text = ultimoLavoro.DataInizio.ToString();
+                    labelDataFine.Text = ultimoLavoro.DataFine.ToString();
+                }
             }
         }
     }

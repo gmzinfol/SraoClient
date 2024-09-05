@@ -97,7 +97,9 @@
     <Compile Include="FormMacchine.Designer.cs">
       <DependentUpon>FormMacchine.cs</DependentUpon>
     </Compile>
-    <Compile Include="SraoApi.cs" />
+    <Compile Include="Option.cs" />
+    <Compile Include="OptionExtensions.cs" />
+    <Compile Include="Srao.cs" />
     <Compile Include="FormDefault.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +154,8 @@
     <Compile Include="Preferences.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SraoApi.cs" />
+    <Compile Include="SraoRepository.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="FormDefault.resx">
       <DependentUpon>FormDefault.cs</DependentUpon>

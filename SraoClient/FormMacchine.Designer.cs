@@ -46,7 +46,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1090, 81);
+            this.panel1.Size = new System.Drawing.Size(1090, 83);
             this.panel1.TabIndex = 9;
             // 
             // labelMacchine
@@ -69,7 +69,7 @@
             this.btnCerca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerca.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerca.ForeColor = System.Drawing.Color.White;
-            this.btnCerca.Location = new System.Drawing.Point(927, 45);
+            this.btnCerca.Location = new System.Drawing.Point(934, 47);
             this.btnCerca.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerca.Name = "btnCerca";
             this.btnCerca.Size = new System.Drawing.Size(143, 32);
@@ -83,10 +83,10 @@
             this.txtCerca.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCerca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCerca.Location = new System.Drawing.Point(13, 47);
+            this.txtCerca.Location = new System.Drawing.Point(13, 49);
             this.txtCerca.Margin = new System.Windows.Forms.Padding(4);
             this.txtCerca.Name = "txtCerca";
-            this.txtCerca.Size = new System.Drawing.Size(906, 30);
+            this.txtCerca.Size = new System.Drawing.Size(913, 30);
             this.txtCerca.TabIndex = 2;
             this.txtCerca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCerca_KeyDown);
             // 
@@ -98,10 +98,10 @@
             this.listBoxMacchine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxMacchine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
             this.listBoxMacchine.ItemHeight = 20;
-            this.listBoxMacchine.Location = new System.Drawing.Point(0, 81);
+            this.listBoxMacchine.Location = new System.Drawing.Point(0, 83);
             this.listBoxMacchine.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxMacchine.Name = "listBoxMacchine";
-            this.listBoxMacchine.Size = new System.Drawing.Size(1090, 609);
+            this.listBoxMacchine.Size = new System.Drawing.Size(1090, 607);
             this.listBoxMacchine.Sorted = true;
             this.listBoxMacchine.TabIndex = 10;
             this.listBoxMacchine.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxMacchine_MouseDoubleClick);

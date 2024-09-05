@@ -10,18 +10,18 @@ namespace SraoClient
 {
     public class Data
     {
-        private SraoApi srao;
+        private Srao srao;
         public List<Ordine> Ordini;
 
         public Data(string host)
         {
-            srao = new SraoApi(host);
+            srao = new Srao(host);
             Ordini = new List<Ordine>();
         }
 
         public void ChangeHost(string host)
         {
-            srao = new SraoApi(host);
+            srao = new Srao(host);
             Ordini.Clear();
         }
 
